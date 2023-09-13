@@ -1,19 +1,27 @@
-//example using const of type React.FC
+import React from 'react';
+import ItemListComponent from './components/items/itemsListComponent'; // Changed import path
 
-import React from 'react'
+const items = [
+    {
+        id: 1,
+        name: 'Item 1'
+    },
+    {
+        id: 2,
+        name: 'Item 2'
+    },
+    {
+        id: 3,
+        name: 'Item 3'
+    }
+]
 
-function ItemListComponent(props) {
+function App() {
     return (
         <div>
-            <h3>Items:</h3>
-            <ul>
-                {
-                    props.items.map((item, index) => <li key={index}>{item.name}</li>
-                    )
-                }
-            </ul>
+            <ItemListComponent items={items} /> {/* Changed component name */}
         </div>
     )
 }
 
-export default ItemListComponent
+export default App;
