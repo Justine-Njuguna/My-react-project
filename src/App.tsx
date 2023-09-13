@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemListComponent from './components/items/itemsListComponent'; // Changed import path
+import { ItemListComponent } from './components/items/itemsListComponent'; // Changed import path
 
 const items = [
     {
@@ -9,6 +9,7 @@ const items = [
     {
         id: 2,
         name: 'Item 2'
+
     },
     {
         id: 3,

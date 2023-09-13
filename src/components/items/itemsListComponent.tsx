@@ -1,25 +1,25 @@
 import React from 'react';
+//import reference to our interface
+import { itemInterface } from '../models/items/itemInteface';
 
-interface Item {
-    id: number;
-    name: string;
-}
+export class ItemListComponent extends React.Component {
+    items: itemInterface[]
+        constructor(props: {
+            items: itemInterface[]
+        })
+        {
+            super(props);
+        }
+        render(): React.ReactNode {
+            const { items } = this.props
 
-interface ItemListComponentProps {
-    items: Item[];
-}
-
-function ItemListComponent(props: ItemListComponentProps) {
-    return (
-        <div>
-            <h3>Items:</h3>
-            <ul>
-                {props.items.map((item, index) => (
-                    <li key={index}>{item.name}</li>
-                ))}
-            </ul>
-        </div>
-    )
-}
-
-export default ItemListComponent;
+            return <div>
+                <h3>Items:</h3>
+                <ul>
+                    {
+                        items.map((item: itemInterface, index: number) => <li key={index}>{item.name}</li>)
+                    }
+                </ul>
+            </div>
+        }
+    }
